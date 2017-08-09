@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>登陆-注册</title>
+    <link rel="stylesheet" href="../css/reset.css">
+    <link rel="stylesheet" href="../css/index.css">
+    <link rel="stylesheet" href="../css/chanpin.css">
+    <link rel="stylesheet" href="../css/shaixuan.css">
+    <style>
+        form{
+            margin: 0 auto;
+            padding-top: 175px;
+            width: 500px;
+            font-size: 16px;
+        }
+        .error{
+            color:#f00;
+            font-size: 12px;
+            font-weight:bold;
+            display: none;
+        }
+        p{
+            height: 30px;
+            line-height: 30px;
+        }
+        p input{
+            height: 20px;
+            border: 1px solid #ccc;
+        }
+        p  .name {
+            display: inline-block;
+            width: 100px;
+            margin-right: 10px;
+        }
+        .btn {
+            text-align: center;
+            margin: 20px 0;
+        }
+        .btn input{
+            width: 80px;
+            height: 30px;
+            margin-right: 20px;
+        }
+    </style>
+    <script src="../js/jquery-3.2.1.min.js"></script>
+</head>
+<body>
+<div class="headBar">
+    <div class="headTop">
+        <div class="con ">
+            <div class="headTop-left left">
+                <a href="#" class="collection">收藏虾米</a>
+            </div>
+            <div class="headTop-right right">
+                <span>欢迎来到虾米网！<a href="">[登录]</a><a href="">[免费注册]</a></span>
+            </div>
+        </div>
+    </div><!--headTop结束-->
+    <div class="headMid ">
+        <div class="con clearfix">
+            <div class="logo-left left">
+                <a href="#"><img src="../img/logo.png" alt="虾米网"></a>
+            </div>
+
+
+        </div>
+    </div><!--headMid结束-->
+
+</div>
+<div class="con">
+    <form action="reg.php" method="get">
+        <p>
+            <span class="name"> 用 &nbsp;&nbsp;户 &nbsp;&nbsp;名 ：</span><input type="text" name="username" class="auth" placeholder="至少为3位">
+            <span class="error">用户名至少为3位</span>
+        </p>
+
+        <p>
+            <span class="name"> 邮 箱 验 证&nbsp; : </span><input type="text" class="auth" name="email" placeholder="eg:1975427683@qq.com">
+            <span class="error">邮箱格式不正确！</span>
+        </p>
+        <p>
+            <span class="name"> 手 机 验 证 ：</span><input type="text" class="auth" name="phone" maxlength="11" >
+            <span class="error">手机号码格式不正确！</span>
+        </p>
+        <p>
+            <span class="name">密&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;码 ：</span><input type="password" name="password" class="auth" placeholder="至少为8位">
+            <span class="error">密码至少为8位！</span>
+        </p>
+        <p>
+            <span class="name">确 认 密 码 ：</span><input type="password" name="repassword" class="auth">
+            <span class="error">两次密码不一致！</span>
+        </p>
+        <p class="btn"><input type="submit" value="注册"><input type="reset" value="取消"></p>
+    </form>
+</div>
+<div class="footer">
+    <div class="footer-top">
+        <a href="">虾米简介</a>&nbsp;|
+        <a href="">虾米公告</a>&nbsp;|
+        <a href="">招纳贤士</a>&nbsp;|
+        <a href="">联系我们</a>&nbsp;|
+        <a href="">客服热线：400-675-1234</a>
+    </div>
+    <p>Copyright&nbsp;&copy;&nbsp;2014 - 2018&nbsp;XXX权所有&nbsp;&nbsp;&nbsp;京ICP备09037834号&nbsp;&nbsp;  京ICP证B1034-8373号&nbsp;&nbsp;&nbsp;&nbsp;某市公安局XX分局备案编号：123456789123</p>
+    <div class="footer-bottom">
+        <a href=""><img src="../img/banner/footer.jpg" alt=""></a>
+        <a href=""><img src="../img/banner/footer.jpg" alt=""></a>
+        <a href=""><img src="../img/banner/footer.jpg" alt=""></a>
+        <a href=""><img src="../img/banner/footer.jpg" alt=""></a>
+    </div>
+</div>
+</body>
+<script>
+    $('input[name=username]').blur(function(){
+        val=this.value;
+        if(val.length<3){
+            $(this).data({'s':0});
+            $(this).next().show();
+        }else{
+            $(this).data({'s':1});
+            $(this).next().hide();
+        }
+    });
+    $('input[name=email]').blur(function(){
+        val=this.value;
+
+        if(val.match(/^\w+@\W+\.\w+$/i)){
+//            $(this).data({'s':1});
+//            $(this).next().hide();
+            $(this).data({'s':0});
+            $(this).next().show();
+        }else{
+//            $(this).data({'s':0});
+//            $(this).next().show();
+            $(this).data({'s':1});
+            $(this).next().hide();
+        }
+    });
+    $('input[name=phone]').blur(function(){
+        val=this.value;
+
+        if(val.match(/^1\d{10}$/)){
+            $(this).data({'s':1});
+            $(this).next().hide();
+        }else{
+            $(this).data({'s':0});
+            $(this).next().show();
+        }
+    });
+    $('input[name=password]').blur(function(){
+        val=this.value;
+        if(val.length<8){
+            $(this).data({'s':0});
+            $(this).next().show();
+        }else{
+            $(this).data({'s':1});
+            $(this).next().hide();
+        }
+    });
+    $('input[name=repassword]').blur(function(){
+        val=this.value;
+        val1 = $('input[name=password]').val();
+        if(val.length<8 && val!=val1){
+            $(this).data({'s':0});
+            $(this).next().show();
+        }
+        else if(val!=null && val==val1){
+            $(this).data({'s':1});
+            $(this).next().hide();
+        }
+    });
+    $('form').submit(function(){
+        $('.auth').blur();
+
+        t=0;
+
+        $('.auth').each(function(){
+            t += $(this).data('s');
+        });
+        if(t != 5){
+            return false;
+        }
+
+    });
+</script>
+</html>

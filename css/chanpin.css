@@ -1,0 +1,101 @@
+.hr1{
+    height: 10px;
+}
+.chanpin{
+    min-height: 326px;
+    margin-top: 164px;
+    overflow: hidden;
+}
+.leftArea{
+    width: 182px;
+    background: #F3F3F3;
+    border: 1px solid #D7D7D7;
+    /*padding: 0px 15px 0 20px;*/
+}
+.leftArea .nav-title{
+    font-size: 14px;
+    height: 35px;
+    line-height: 35px;
+    text-align: center;
+    border-bottom: 1px solid #D7D7D7;
+}
+.leftCon{
+    padding: 0 18px 4px;
+    border-bottom: 1px dotted #D7D7D7;
+    margin-bottom: -1px;
+}
+.leftCon h3{
+    font-size: 12px;
+    height: 30px;
+    line-height: 30px;
+}
+.conList {
+    line-height: 25px;
+    overflow: hidden;
+}
+.conList li{
+    float: left;
+    height: 25px;
+    width: 50%;
+}
+
+.rightArea{
+    width: 810px;
+}
+/*右侧产品列表*/
+.right-con-title{
+    height: 34px;
+    border-bottom:  2px solid #ccc;
+}
+.right-con-title h3{
+    display: inline-block;
+    font-size: 16px;
+    height: 34px;
+    width: 180px;
+    line-height: 34px;
+    border-bottom:  2px solid #096DBA;
+    padding-left: 10px;
+    margin-bottom: -2px;
+    position: relative;
+}
+/*con-item*/
+.conlist-item{
+    overflow: hidden;
+}
+.right-con .con-item{
+    width: 25%;
+    *width:24.9%;
+    float: left;
+    margin-top: 10px;
+}
+.con-img{
+    height: 170px;
+    text-align: center;
+}
+.right-con{
+    /*margin-top: 10px;*/
+}
+/*.con-img img{*/
+    /*height: 179px;*/
+/*}*/
+.con-item p{
+    display: inline-block;
+    line-height: 20px;
+    padding: 0 13px;
+}
+.con-item p a{
+    color: #333;
+}
+.price{
+    color: #D4105A;
+    font-size: 14px;
+    font-weight: bolder;
+    padding-top: 10px !important;
+}
+.con-item p span{
+    display: inline-block;
+    width: 13px;
+    height: 12px;
+    background: url("../img/icon/star.jpg") no-repeat;
+    margin: 0 2px;
+}

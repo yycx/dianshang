@@ -1,0 +1,26 @@
+1.css hack
+	“-″减号是IE6专有的hack
+	“\9″ IE6/IE7/IE8/IE9/IE10都生效
+	“\0″ IE8/IE9/IE10都生效，是IE8/9/10的hack
+	“\9\0″ 只对IE9/IE10生效，是IE9/10的hack
+	为解决ie6输入框文本信息不居中的问题：
+	.search-text{
+    width: 350px;
+    height: 35px;
+    padding: 0 5px;
+	}
+	1》之前要把input的背景颜色设置为none
+	.search-text{
+		width: 350px;
+		height: 14px;
+		line-height:14px;
+		padding: 11px 5px 10px;
+		background:#FFF;
+	}
+	2》
+	.search-text{
+		width: 350px;
+		height: 35px;
+		line-height:35px\9;
+		padding: 0 5px;
+	}
